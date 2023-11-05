@@ -2,7 +2,6 @@ package com.solvd.laba.block1.task2;
 
 public class Country {
     private String countryName;
-    Country(){}
 
     Country(String countryName) {
         this.countryName = countryName;

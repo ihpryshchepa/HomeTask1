@@ -8,9 +8,6 @@ public class Main {
         System.out.println(country.getCountryName());
 
         Sportsman sportsman = new Sportsman(19, "Ihor");
-        Olympic olympic = new Olympic("Football");
-        SummerOlympic summerOlympic = new SummerOlympic("Kayaking");
-        WinterOlympic winterOlympic = new WinterOlympic("Figure Skating", 1924);
 
     }
 }

@@ -1,6 +1,6 @@
 package com.solvd.laba.block1.task2;
 
-public class Sportsman extends Country{
+public class Sportsman {
     private int age;
     private String name;
 
