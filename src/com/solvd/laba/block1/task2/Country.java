@@ -2,9 +2,11 @@ package com.solvd.laba.block1.task2;
 
 public class Country {
     private String countryName;
+    private String capitalCity;
 
-    Country(String countryName) {
+    Country(String countryName, String capitalCity) {
         this.countryName = countryName;
+        this.capitalCity = capitalCity;
     }
 
     public String getCountryName() {
@@ -13,5 +15,13 @@ public class Country {
 
     public void setCountryName(String newCountryName) {
         this.countryName = newCountryName;
+    }
+
+    public String getCapitalOfOlympicGames() {
+        return capitalCity;
+    }
+
+    public void setCapitalOfOlympicGames(String capitalOfOlympicGames) {
+        this.capitalCity = capitalOfOlympicGames;
     }
 }

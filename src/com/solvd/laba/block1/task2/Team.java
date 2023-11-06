@@ -4,11 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Team {
-    public String countryName;
+    private String countryName;
     List<String> sportsmen = new ArrayList<>();
 
     Team(ArrayList<String> sportsmen, String countryName) {
         this.sportsmen = new ArrayList<>();
+        this.countryName = countryName;
+    }
+
+    public String getCountryName() {
+        return countryName;
+    }
+
+    public void setCountryName(String countryName) {
         this.countryName = countryName;
     }
 }
