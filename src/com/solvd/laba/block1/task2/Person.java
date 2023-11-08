@@ -1,23 +1,17 @@
 package com.solvd.laba.block1.task2;
 
-public class Person {
-    private int age;
+public abstract class Person {
     private String name;
     private String lastName;
 
-    Person(int age, String name, String lastName) {
-        this.age = age;
+    public Person(String name, String lastName) {
         this.name = name;
         this.lastName = lastName;
     }
 
-    public int getAge() {
-        return age;
-    }
+    public Person() {}
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+    abstract void printNameLastName();
 
     public String getName() {
         return name;
