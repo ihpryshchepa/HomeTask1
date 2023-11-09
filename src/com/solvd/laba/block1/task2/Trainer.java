@@ -1,8 +1,6 @@
 package com.solvd.laba.block1.task2;
 
 public class Trainer extends Person {
-    private String name;
-    private String lastName;
     private String status;
 
     Trainer(String name, String lastName, String status) {
@@ -11,7 +9,7 @@ public class Trainer extends Person {
     }
 
     void printNameLastName() {
-        System.out.println("My name is ");
+        System.out.println("My name is " + getName() + " " + getLastName());
     }
 
     public String getName() {

@@ -1,18 +1,10 @@
 package com.solvd.laba.block1.task2;
 
 public class Sportsman extends Person {
-    private String name;
-    private String lastName;
     private int age;
 
-    Sportsman(String name, String lastName) {
-        super(name, lastName);
-    }
-
     Sportsman(String name, String lastName, int age) {
-        super();
-        this.name = name;
-        this.lastName = lastName;
+        super(name, lastName);
         this.age = age;
     }
 
@@ -24,8 +16,8 @@ public class Sportsman extends Person {
         return name;
     }
 
-    public void setName(String newName){
-        this.name = newName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getLastName() {
