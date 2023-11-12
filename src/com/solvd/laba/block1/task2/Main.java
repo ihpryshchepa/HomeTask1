@@ -14,7 +14,18 @@ public class Main {
         sportsmenUkraine.add(sportsman2);
         sportsmenUkraine.add(trainer);
         Team teamUkraine = new Team(sportsmenUkraine, "Ukraine");
-        String result = teamUkraine.toString();
-        System.out.println(result);
+        System.out.println(teamUkraine);
+        System.out.println();
+
+        GameResult gameResult1 = new GameResult("Basketball","Victory!", 1, 1000);
+        System.out.println(gameResult1);
+        FinalResult finalResult = new FinalResult("Victory", 1, 10000, "Ukraine", 15, 10);
+        System.out.println(finalResult);
+        System.out.println(sportsman1);
+
+        Sportsman sportsman3 = new Sportsman("Arthur", "L", 23);
+        Sportsman sportsman4 = new Sportsman("Timur", "O", 24);
+        System.out.println(sportsman3.equals(sportsman4));
+        System.out.println(sportsman3.hashCode());
     }
 }

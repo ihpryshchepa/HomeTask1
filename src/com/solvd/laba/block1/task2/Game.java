@@ -4,7 +4,7 @@ public class Game {
     private String gameName;
     private int countOfPlayers;
 
-    Game(String gameName, int countOfPlayers) {
+    protected Game(String gameName, int countOfPlayers) {
         this.gameName = gameName;
         this.countOfPlayers = countOfPlayers;
     }

@@ -1,14 +1,24 @@
 package com.solvd.laba.block1.task2;
 
-public class FinalResult {
+public class FinalResult extends Result {
     private String victoryCountry;
     private int countOfSportsmen;
     private int countOfMedals;
 
-    FinalResult(String victoryCountry, int countOfSportsmen, int countOfMedals) {
+    protected FinalResult(String result, int place, int score, String victoryCountry, int countOfSportsmen, int countOfMedals) {
+        super(result, place, score);
         this.victoryCountry = victoryCountry;
         this.countOfSportsmen = countOfSportsmen;
         this.countOfMedals = countOfMedals;
+    }
+
+    @Override
+    public String toString() {
+        return "FinalResult{"
+                + "victoryCountry='" + victoryCountry + '\''
+                + ", countOfSportsmen=" + countOfSportsmen + '\''
+                + ", countOfMedals='" + countOfMedals + '\''
+                + '}';
     }
 
     public String getVictoryCountry() {

@@ -3,12 +3,12 @@ package com.solvd.laba.block1.task2;
 public class Trainer extends Person {
     private String status;
 
-    Trainer(String name, String lastName, String status) {
+    protected Trainer(String name, String lastName, String status) {
         super(name, lastName);
         this.status = status;
     }
 
-    void printNameLastName() {
+    protected void printNameLastName() {
         System.out.println("My name is " + getName() + " " + getLastName());
     }
 

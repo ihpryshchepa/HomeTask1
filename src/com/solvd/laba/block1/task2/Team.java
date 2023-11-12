@@ -1,8 +1,5 @@
 package com.solvd.laba.block1.task2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class Team {
@@ -16,7 +13,9 @@ public class Team {
 
     @Override
     public String toString() {
-        return "Names: " + this.getClass().getSimpleName() + " Country: " + countryName;
+        return "Team{"
+                + "countryName='" + countryName + '\''
+                + '}';
     }
 
     public String getCountryName() {

@@ -4,7 +4,7 @@ public class Country {
     private String countryName;
     private String capitalCity;
 
-    Country(String countryName, String capitalCity) {
+    protected Country(String countryName, String capitalCity) {
         this.countryName = countryName;
         this.capitalCity = capitalCity;
     }
