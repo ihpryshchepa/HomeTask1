@@ -1,6 +1,8 @@
 package com.solvd.laba.block1.task2;
 
-public class Trainer extends Person {
+import com.solvd.laba.block1.task2.interfaces.Slogan;
+
+public class Trainer extends Person implements Slogan {
     private String status;
 
     protected Trainer(String name, String lastName, String status) {
@@ -10,6 +12,11 @@ public class Trainer extends Person {
 
     protected void printNameLastName() {
         System.out.println("My name is " + getName() + " " + getLastName());
+    }
+
+    @Override
+    public void saySlogan() {
+        System.out.println("The Trainer's Slogan");
     }
 
     public String getName() {

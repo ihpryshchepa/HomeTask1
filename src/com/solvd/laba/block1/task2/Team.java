@@ -1,8 +1,11 @@
 package com.solvd.laba.block1.task2;
 
+import com.solvd.laba.block1.task2.interfaces.Slogan;
+import com.solvd.laba.block1.task2.interfaces.Sportsmen;
+
 import java.util.List;
 
-public class Team {
+public class Team implements Slogan, Sportsmen {
     private List<Object> sportsmen;
     private String countryName;
 
@@ -16,6 +19,16 @@ public class Team {
         return "Team{"
                 + "countryName='" + countryName + '\''
                 + '}';
+    }
+
+    @Override
+    public void doTrain() {
+        System.out.println("The Team trains");
+    }
+
+    @Override
+    public void saySlogan() {
+        System.out.println("The Team's Slogan");
     }
 
     public String getCountryName() {

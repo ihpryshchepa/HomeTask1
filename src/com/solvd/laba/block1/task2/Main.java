@@ -3,6 +3,8 @@ package com.solvd.laba.block1.task2;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.solvd.laba.block1.task2.Game.printCountOfGames;
+
 public class Main {
     public static void main(String[] args) {
         Sportsman sportsman1 = new Sportsman("Igor", "Pryshchepa", 21);
@@ -19,7 +21,7 @@ public class Main {
 
         GameResult gameResult1 = new GameResult("Basketball","Victory!", 1, 1000);
         System.out.println(gameResult1);
-        FinalResult finalResult = new FinalResult("Victory", 1, 10000, "Ukraine", 15, 10);
+        FinalResult finalResult = new FinalResult("Victory", 1, 10000, "victoryCountry", 15, 10);
         System.out.println(finalResult);
         System.out.println(sportsman1);
 
@@ -27,5 +29,7 @@ public class Main {
         Sportsman sportsman4 = new Sportsman("Timur", "O", 24);
         System.out.println(sportsman3.equals(sportsman4));
         System.out.println(sportsman3.hashCode());
+
+        printCountOfGames(42);
     }
 }

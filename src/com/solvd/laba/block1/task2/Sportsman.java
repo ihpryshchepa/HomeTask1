@@ -1,8 +1,12 @@
 package com.solvd.laba.block1.task2;
 
+import com.solvd.laba.block1.task2.interfaces.Playable;
+import com.solvd.laba.block1.task2.interfaces.Slogan;
+import com.solvd.laba.block1.task2.interfaces.Sportsmen;
+
 import java.util.Objects;
 
-public class Sportsman extends Person {
+public class Sportsman extends Person implements Playable, Slogan, Sportsmen {
     private int age;
 
     protected Sportsman(String name, String lastName, int age) {
@@ -30,6 +34,21 @@ public class Sportsman extends Person {
     @Override
     public int hashCode() {
         return Objects.hash(age);
+    }
+
+    @Override
+    public void playGame() {
+        System.out.println("Method playGame in class Sportsman.");
+    }
+
+    @Override
+    public void saySlogan() {
+        System.out.println("The Sportsman's Slogan");
+    }
+
+    @Override
+    public void doTrain() {
+        System.out.println("The Sportsman trains");
     }
 
     protected void printNameLastName() {
