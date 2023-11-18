@@ -11,11 +11,11 @@ public class Main {
         Sportsman sportsman2 = new Sportsman("Vasiliy", "Korzsh", 22);
         sportsman1.printNameLastName();
         Trainer trainer = new Trainer("Dmitriy", "Greck", "MSMC");
-        List<Object> sportsmenUkraine = new ArrayList<>();
+        List<Sportsman> sportsmenUkraine = new ArrayList<>();
         sportsmenUkraine.add(sportsman1);
         sportsmenUkraine.add(sportsman2);
-        sportsmenUkraine.add(trainer);
-        Team teamUkraine = new Team(sportsmenUkraine, "Ukraine");
+        Country ukraine = new Country("Ukraine", "Kyiv");
+        Team teamUkraine = new Team(sportsmenUkraine, ukraine);
         System.out.println(teamUkraine);
         System.out.println();
 

@@ -6,18 +6,18 @@ import com.solvd.laba.block1.task2.interfaces.Sportsmen;
 import java.util.List;
 
 public class Team implements Slogan, Sportsmen {
-    private List<Object> sportsmen;
-    private String countryName;
+    private List<Sportsman> sportsmen;
+    private Country country;
 
-    public Team(List<Object> sportsmen, String countryName) {
+    public Team(List<Sportsman> sportsmen, Country country) {
         this.sportsmen = sportsmen;
-        this.countryName = countryName;
+        this.country = country;
     }
 
     @Override
     public String toString() {
         return "Team{"
-                + "countryName='" + countryName + '\''
+                + "countryName='" + country + '\''
                 + '}';
     }
 
@@ -31,11 +31,11 @@ public class Team implements Slogan, Sportsmen {
         System.out.println("The Team's Slogan");
     }
 
-    public String getCountryName() {
-        return countryName;
+    public Country getCountryName() {
+        return country;
     }
 
     public void setCountryName(String countryName) {
-        this.countryName = countryName;
+        this.country = country;
     }
 }
