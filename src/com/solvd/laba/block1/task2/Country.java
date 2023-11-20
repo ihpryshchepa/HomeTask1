@@ -9,6 +9,14 @@ public class Country {
         this.capitalCity = capitalCity;
     }
 
+    @Override
+    public String toString() {
+        return "Country {"
+                + "countryName='" + countryName + '\''
+                + "capitalCity='" + capitalCity + '\''
+                + '}';
+    }
+
     public String getCountryName() {
         return countryName;
     }

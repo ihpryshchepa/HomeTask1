@@ -16,8 +16,8 @@ public class Team implements Slogan, Sportsmen {
 
     @Override
     public String toString() {
-        return "Team{"
-                + "countryName='" + country + '\''
+        return "Team {"
+                + "countryName='" + country.toString() + '\''
                 + '}';
     }
 

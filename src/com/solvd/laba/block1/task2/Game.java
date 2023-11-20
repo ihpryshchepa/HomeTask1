@@ -12,6 +12,14 @@ public class Game implements Ball {
         this.countOfPlayers = countOfPlayers;
     }
 
+    @Override
+    public String toString() {
+        return "Game {"
+                + "gameName='" + gameName + '\''
+                + "countOfPlayers='" + countOfPlayers + '\''
+                + '}';
+    }
+
     public static void printCountOfGames(int countOfOlympicGames) {
         System.out.println("Count of Olympic Games " + countOfOlympicGames);
     }
