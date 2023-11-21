@@ -7,18 +7,18 @@ import java.util.List;
 
 public class Team implements Slogan, Sportsmen {
     private List<Sportsman> sportsmen;
-    private Country country;
+    private Trainer trainer;
 
-    public Team(List<Sportsman> sportsmen, Country country) {
+    public Team(List<Sportsman> sportsmen, Trainer trainer) {
         this.sportsmen = sportsmen;
-        this.country = country;
+        this.trainer = trainer;
     }
-
-    @Override
-    public String toString() {
-        return "Team {"
-                + "countryName='" + country.toString() + '\''
-                + '}';
+    public int getTeamScore() {
+        int teamScore = 0;
+        for(Sportsman sportsman : sportsmen) {
+            teamScore += sportsman.getSportsmanScore();
+        }
+        return teamScore * trainer.getYearsOfExp();
     }
 
     @Override
@@ -29,13 +29,5 @@ public class Team implements Slogan, Sportsmen {
     @Override
     public void saySlogan() {
         System.out.println("The Team's Slogan");
-    }
-
-    public Country getCountryName() {
-        return country;
-    }
-
-    public void setCountryName(String countryName) {
-        this.country = country;
     }
 }

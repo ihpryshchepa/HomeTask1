@@ -8,10 +8,23 @@ import java.util.Objects;
 
 public class Sportsman extends Person implements Playable, Slogan, Sportsmen {
     private int age;
+    private int strength;
+    private int agility;
+    private int intelligence;
 
     protected Sportsman(String name, String lastName, int age) {
         super(name, lastName);
         this.age = age;
+    }
+
+    public void setCharacteristics(int strength, int agility, int intelligence) {
+        this.strength = strength;
+        this.agility = agility;
+        this.intelligence = intelligence;
+    }
+
+    public int getSportsmanScore() {
+        return age * (strength + agility + intelligence);
     }
 
     @Override

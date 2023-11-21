@@ -4,6 +4,7 @@ import com.solvd.laba.block1.task2.interfaces.Slogan;
 
 public class Trainer extends Person implements Slogan {
     private String status;
+    private int yearsOfExp;
 
     protected Trainer(String name, String lastName, String status) {
         super(name, lastName);
@@ -42,4 +43,15 @@ public class Trainer extends Person implements Slogan {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public int getYearsOfExp() {
+        return yearsOfExp;
+    }
+    public void setYearsOfExp(int yearsOfExp) {
+        this.yearsOfExp = yearsOfExp;
+    }
+
+
+
+
 }

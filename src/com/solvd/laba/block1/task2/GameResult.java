@@ -20,12 +20,12 @@ public class GameResult extends Result {
                 + '}';
     }
 
-    public static void generateGameResult(Game gameName, Team team1, Team team2) {
-        Random r = new Random();
-        int team1Score = r.nextInt(100);
-        int team2Score = r.nextInt(100);
-        if(team1Score > team2Score) System.out.println("In game " + gameName.toString() + team1.toString() + " Wins!!!" );
-        else System.out.println(team2.toString() + " Wins!!!");
+    public static void generateGameResult(Game game, int team1Score, int team2Score) {
+        if (team1Score > team2Score) {
+            System.out.println("In game " + game.getGameName() + " with count of score " + team1Score + " wins Team Ukraine");
+        } else {
+            System.out.println("In game " + game.getGameName() + " with count of score " + team2Score + " wins Team USA");
+        }
     }
 
     public String getGameName() {
@@ -52,7 +52,11 @@ public class GameResult extends Result {
         this.place = place;
     }
 
-    public int getScore() { return score; }
+    public int getScore() {
+        return score;
+    }
 
-    public void setScore(int score) { this.score = score; }
+    public void setScore(int score) {
+        this.score = score;
+    }
 }
