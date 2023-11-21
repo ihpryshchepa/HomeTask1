@@ -47,11 +47,10 @@ public class Trainer extends Person implements Slogan {
     public int getYearsOfExp() {
         return yearsOfExp;
     }
+
     public void setYearsOfExp(int yearsOfExp) {
         this.yearsOfExp = yearsOfExp;
     }
-
-
 
 
 }

@@ -1,11 +1,11 @@
 package com.solvd.laba.block1.task2;
 
 public final class FinalResult extends Result {
-    final String VICTORY_COUNTRY;
+    private final String VICTORY_COUNTRY;
     private int countOfSportsmen;
     private int countOfMedals;
 
-    FinalResult(String result, int place, int score, String victoryCountry, int countOfSportsmen, int countOfMedals) {
+    protected FinalResult(String result, int place, int score, String victoryCountry, int countOfSportsmen, int countOfMedals) {
         super(result, place, score);
         VICTORY_COUNTRY = victoryCountry;
         this.countOfSportsmen = countOfSportsmen;

@@ -30,21 +30,21 @@ public class Main {
         List<Sportsman> sportsmenUkraine = new ArrayList<>();
         sportsmenUkraine.add(sportsman1);
         sportsmenUkraine.add(sportsman2);
-        Team teamUkraine = new Team(sportsmenUkraine, trainer1);
+        Team teamUkraine = new Team(sportsmenUkraine, trainer1, "Ukraine");
         int teamUkraineScore = teamUkraine.getTeamScore();
         System.out.println("Очки команды Ukraine " + teamUkraineScore);
 
         List<Sportsman> sportsmenUSA = new ArrayList<>();
         sportsmenUSA.add(sportsman3);
         sportsmenUSA.add(sportsman4);
-        Team teamUsa = new Team(sportsmenUSA, trainer2);
+        Team teamUsa = new Team(sportsmenUSA, trainer2, "USA");
         int teamUsaScore = teamUsa.getTeamScore();
         System.out.println("Очки команды USA " + teamUsaScore);
 
-        GameResult.generateGameResult(judo, teamUkraineScore, teamUsaScore);
+        GameResult.generateGameResult(judo, teamUkraine, teamUsa);
+        System.out.println();
 
-        /*
-        GameResult gameResult1 = new GameResult("Basketball","Victory!", 1, 1000);
+        GameResult gameResult1 = new GameResult("Basketball", "Victory!", 1, 1000);
         System.out.println(gameResult1);
         FinalResult finalResult = new FinalResult("Victory", 1, 10000, "victoryCountry", 15, 10);
         System.out.println(finalResult);
@@ -55,7 +55,5 @@ public class Main {
         System.out.println(sportsman3.hashCode());
 
         printCountOfGames(42);
-
-        */
     }
 }

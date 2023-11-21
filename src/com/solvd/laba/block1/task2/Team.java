@@ -8,17 +8,28 @@ import java.util.List;
 public class Team implements Slogan, Sportsmen {
     private List<Sportsman> sportsmen;
     private Trainer trainer;
+    private String name;
 
-    public Team(List<Sportsman> sportsmen, Trainer trainer) {
+    public Team(List<Sportsman> sportsmen, Trainer trainer, String name) {
         this.sportsmen = sportsmen;
         this.trainer = trainer;
+        this.name = name;
     }
+
     public int getTeamScore() {
         int teamScore = 0;
-        for(Sportsman sportsman : sportsmen) {
+        for (Sportsman sportsman : sportsmen) {
             teamScore += sportsman.getSportsmanScore();
         }
         return teamScore * trainer.getYearsOfExp();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override

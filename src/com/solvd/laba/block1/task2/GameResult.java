@@ -1,7 +1,5 @@
 package com.solvd.laba.block1.task2;
 
-import java.util.Random;
-
 public class GameResult extends Result {
     private String gameName;
 
@@ -20,11 +18,12 @@ public class GameResult extends Result {
                 + '}';
     }
 
-    public static void generateGameResult(Game game, int team1Score, int team2Score) {
-        if (team1Score > team2Score) {
-            System.out.println("In game " + game.getGameName() + " with count of score " + team1Score + " wins Team Ukraine");
+    public static void generateGameResult(Game game, Team team1, Team team2) {
+        double weatherFactor = 0.5;
+        if (team1.getTeamScore() > team2.getTeamScore()) {
+            System.out.println("In game " + game.getGameName() + " with count of score and weather factor " + team1.getTeamScore() * weatherFactor + " wins " + team1.getName());
         } else {
-            System.out.println("In game " + game.getGameName() + " with count of score " + team2Score + " wins Team USA");
+            System.out.println("In game " + game.getGameName() + " with count of score and weather factor " + team2.getTeamScore() * weatherFactor + " wins " + team2.getName());
         }
     }
 
