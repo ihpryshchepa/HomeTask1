@@ -1,13 +1,13 @@
 package com.solvd.laba.block1.task2;
 
 public abstract class Person {
-    String name;
-    String lastName;
+    protected String name;
+    protected String lastName;
 
-    Person(String name, String lastName) {
+    protected Person(String name, String lastName) {
         this.name = name;
         this.lastName = lastName;
     }
 
-    abstract void printNameLastName();
+    protected abstract void printNameLastName();
 }

@@ -7,25 +7,22 @@ public class Game implements Ball {
     private int countOfPlayers;
     static int countOfOlympicGames;
 
+    static {
+        System.out.println("The Olympic Games are starting");
+    }
+
     protected Game(String gameName, int countOfPlayers) {
         this.gameName = gameName;
         this.countOfPlayers = countOfPlayers;
-    }
-
-    @Override
-    public String toString() {
-        return "Game {"
-                + "gameName='" + gameName + '\''
-                + "countOfPlayers='" + countOfPlayers + '\''
-                + '}';
     }
 
     public static void printCountOfGames(int countOfOlympicGames) {
         System.out.println("Count of Olympic Games " + countOfOlympicGames);
     }
 
-    static {
-        System.out.println("The Olympic Games are starting");
+    @Override
+    public void playWithBall() {
+        System.out.println("Method playWithBall in class Game.");
     }
 
     public String getGameName() {
@@ -45,7 +42,10 @@ public class Game implements Ball {
     }
 
     @Override
-    public void playWithBall() {
-        System.out.println("Method playWithBall in class Game.");
+    public String toString() {
+        return "Game {"
+                + "gameName='" + gameName + '\''
+                + "countOfPlayers='" + countOfPlayers + '\''
+                + '}';
     }
 }

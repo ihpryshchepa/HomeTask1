@@ -10,7 +10,7 @@ public class Team implements Slogan, Sportsmen {
     private Trainer trainer;
     private String name;
 
-    public Team(List<Sportsman> sportsmen, Trainer trainer, String name) {
+    protected Team(List<Sportsman> sportsmen, Trainer trainer, String name) {
         this.sportsmen = sportsmen;
         this.trainer = trainer;
         this.name = name;
@@ -24,14 +24,6 @@ public class Team implements Slogan, Sportsmen {
         return teamScore * trainer.getYearsOfExp();
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     @Override
     public void doTrain() {
         System.out.println("The Team trains");
@@ -40,5 +32,13 @@ public class Team implements Slogan, Sportsmen {
     @Override
     public void saySlogan() {
         System.out.println("The Team's Slogan");
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

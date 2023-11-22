@@ -41,11 +41,12 @@ public class Main {
         int teamUsaScore = teamUsa.getTeamScore();
         System.out.println("Очки команды USA " + teamUsaScore);
 
-        GameResult.generateGameResult(judo, teamUkraine, teamUsa);
+        GameResult gameResult1 = new GameResult("Judo", "Victory!", 1, 1000, "Sunny");
+        double weatherFactor = gameResult1.getWeatherFactor("Rainy");
+        GameResult.generateGameResult(judo, teamUkraine, teamUsa, weatherFactor);
+        System.out.println(gameResult1);
         System.out.println();
 
-        GameResult gameResult1 = new GameResult("Basketball", "Victory!", 1, 1000);
-        System.out.println(gameResult1);
         FinalResult finalResult = new FinalResult("Victory", 1, 10000, "victoryCountry", 15, 10);
         System.out.println(finalResult);
 

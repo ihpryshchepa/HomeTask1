@@ -5,20 +5,11 @@ public final class FinalResult extends Result {
     private int countOfSportsmen;
     private int countOfMedals;
 
-    protected FinalResult(String result, int place, int score, String victoryCountry, int countOfSportsmen, int countOfMedals) {
+    public FinalResult(String result, int place, int score, String victoryCountry, int countOfSportsmen, int countOfMedals) {
         super(result, place, score);
         this.victoryCountry = victoryCountry;
         this.countOfSportsmen = countOfSportsmen;
         this.countOfMedals = countOfMedals;
-    }
-
-    @Override
-    public String toString() {
-        return "FinalResult{"
-                + "victoryCountry='" + victoryCountry + '\''
-                + ", countOfSportsmen=" + countOfSportsmen + '\''
-                + ", countOfMedals='" + countOfMedals + '\''
-                + '}';
     }
 
     public final void displayVictoryCountry() {
@@ -39,5 +30,14 @@ public final class FinalResult extends Result {
 
     public void setCountOfMedals(int countOfMedals) {
         this.countOfMedals = countOfMedals;
+    }
+
+    @Override
+    public String toString() {
+        return "FinalResult{"
+                + "victoryCountry='" + victoryCountry + '\''
+                + ", countOfSportsmen=" + countOfSportsmen + '\''
+                + ", countOfMedals='" + countOfMedals + '\''
+                + '}';
     }
 }

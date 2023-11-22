@@ -27,26 +27,8 @@ public class Sportsman extends Person implements Playable, Slogan, Sportsmen {
         return age * (strength + agility + intelligence);
     }
 
-    @Override
-    public String toString() {
-        return "Sportsman{"
-                + "name='" + name + '\''
-                + ", lastName=" + lastName + '\''
-                + ", age='" + age + '\''
-                + '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Sportsman sportsman = (Sportsman) o;
-        return age == sportsman.age;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(age);
+    public void printNameLastName() {
+        System.out.println("My name is " + getName() + " " + getLastName());
     }
 
     @Override
@@ -62,10 +44,6 @@ public class Sportsman extends Person implements Playable, Slogan, Sportsmen {
     @Override
     public void doTrain() {
         System.out.println("The Sportsman trains");
-    }
-
-    protected void printNameLastName() {
-        System.out.println("My name is " + getName() + " " + getLastName());
     }
 
     public String getName() {
@@ -90,5 +68,27 @@ public class Sportsman extends Person implements Playable, Slogan, Sportsmen {
 
     public void setAge(int newAge) {
         this.age = newAge;
+    }
+
+    @Override
+    public String toString() {
+        return "Sportsman{"
+                + "name='" + name + '\''
+                + ", lastName=" + lastName + '\''
+                + ", age='" + age + '\''
+                + '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Sportsman sportsman = (Sportsman) o;
+        return age == sportsman.age;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(age);
     }
 }

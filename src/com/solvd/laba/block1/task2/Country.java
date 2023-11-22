@@ -9,14 +9,6 @@ public class Country {
         this.capitalCity = capitalCity;
     }
 
-    @Override
-    public String toString() {
-        return "Country {"
-                + "countryName='" + countryName + '\''
-                + "capitalCity='" + capitalCity + '\''
-                + '}';
-    }
-
     public String getCountryName() {
         return countryName;
     }
@@ -31,5 +23,13 @@ public class Country {
 
     public void setCapitalOfOlympicGames(String capitalOfOlympicGames) {
         this.capitalCity = capitalOfOlympicGames;
+    }
+
+    @Override
+    public String toString() {
+        return "Country {"
+                + "countryName='" + countryName + '\''
+                + "capitalCity='" + capitalCity + '\''
+                + '}';
     }
 }

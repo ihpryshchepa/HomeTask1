@@ -11,7 +11,7 @@ public class Trainer extends Person implements Slogan {
         this.status = status;
     }
 
-    protected void printNameLastName() {
+    public void printNameLastName() {
         System.out.println("My name is " + getName() + " " + getLastName());
     }
 
