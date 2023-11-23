@@ -1,26 +1,36 @@
 package com.solvd.laba.block1.task2;
 
+import com.solvd.laba.block1.task2.exceptions.InvalidAgeException;
+import com.solvd.laba.block1.task2.exceptions.InvalidCharacteristicsException;
 import com.solvd.laba.block1.task2.interfaces.Playable;
-import com.solvd.laba.block1.task2.interfaces.Slogan;
 import com.solvd.laba.block1.task2.interfaces.Sportsmen;
 
 import java.util.Objects;
 
-public class Sportsman extends Person implements Playable, Slogan, Sportsmen {
+public class Sportsman extends Person implements Playable, Sportsmen {
     private int age;
     private int strength;
     private int agility;
     private int intelligence;
 
-    protected Sportsman(String name, String lastName, int age) {
+    protected Sportsman(String name, String lastName) {
         super(name, lastName);
-        this.age = age;
     }
 
-    public void setCharacteristics(int strength, int agility, int intelligence) {
-        this.strength = strength;
-        this.agility = agility;
-        this.intelligence = intelligence;
+    public void setCharacteristics(int strength, int agility, int intelligence) throws InvalidCharacteristicsException {
+        if (strength > 0 & agility > 0 & intelligence > 0) {
+            this.strength = strength;
+            this.agility = agility;
+            this.intelligence = intelligence;
+        } else {
+            throw new InvalidCharacteristicsException("Characteristics can not be negative.");
+        }
+    }
+
+    public void setDefaultCharacteristics() {
+        this.strength = 5;
+        this.agility = 5;
+        this.intelligence = 5;
     }
 
     public int getSportsmanScore() {
@@ -34,11 +44,6 @@ public class Sportsman extends Person implements Playable, Slogan, Sportsmen {
     @Override
     public void playGame() {
         System.out.println("Method playGame in class Sportsman.");
-    }
-
-    @Override
-    public void saySlogan() {
-        System.out.println("The Sportsman's Slogan");
     }
 
     @Override
@@ -66,8 +71,16 @@ public class Sportsman extends Person implements Playable, Slogan, Sportsmen {
         return age;
     }
 
-    public void setAge(int newAge) {
-        this.age = newAge;
+    public void setAge(int age) throws InvalidAgeException {
+        if (age > 0) {
+            this.age = age;
+        } else {
+            throw new InvalidAgeException("Age can not be negative.");
+        }
+    }
+
+    public void setDefaultAge() {
+        this.age = 18;
     }
 
     @Override

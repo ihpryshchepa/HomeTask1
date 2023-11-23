@@ -1,8 +1,15 @@
 package com.solvd.laba.block1.task2;
 
+import com.solvd.laba.block1.task2.exceptions.InvalidTeamScoreException;
+
 public class GameResult extends Result {
     private String gameName;
     private String weather;
+
+    public GameResult(String gameName, String weather) {
+        this.gameName = gameName;
+        this.weather = weather;
+    }
 
     protected GameResult(String gameName, String result, int place, int score, String weather) {
         super(result, place, score);
@@ -21,10 +28,14 @@ public class GameResult extends Result {
     }
 
     public static void generateGameResult(Game game, Team team1, Team team2, double weatherFactor) {
-        if (team1.getTeamScore() > team2.getTeamScore()) {
-            System.out.println("In game " + game.getGameName() + " with count of score and weather factor " + team1.getTeamScore() * weatherFactor + " wins " + team1.getName());
-        } else {
-            System.out.println("In game " + game.getGameName() + " with count of score and weather factor " + team2.getTeamScore() * weatherFactor + " wins " + team2.getName());
+        try {
+            if (team1.getTeamScore() > team2.getTeamScore()) {
+                System.out.println("In game " + game.getGameName() + " with count of score and weather factor " + team1.getTeamScore() * weatherFactor + " wins " + team1.getName());
+            } else {
+                System.out.println("In game " + game.getGameName() + " with count of score and weather factor " + team2.getTeamScore() * weatherFactor + " wins " + team2.getName());
+            }
+        } catch (InvalidTeamScoreException e) {
+            System.err.println(e.getMessage());
         }
     }
 
@@ -70,9 +81,9 @@ public class GameResult extends Result {
 
     @Override
     public String toString() {
-        return "GameResult{"
+        return "GameResult {"
                 + "gameName='" + gameName + '\''
-                + "place='" + result + '\''
+                + ", result='" + result + '\''
                 + ", place=" + place + '\''
                 + ", score=" + score + '\''
                 + '}';

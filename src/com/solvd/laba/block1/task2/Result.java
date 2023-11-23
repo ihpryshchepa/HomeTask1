@@ -7,6 +7,8 @@ public abstract class Result implements Points {
     protected int place;
     protected int score;
 
+    public Result() {};
+
     protected Result(String result, int place, int score) {
         this.result = result;
         this.place = place;

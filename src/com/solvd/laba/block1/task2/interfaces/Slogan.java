@@ -1,5 +1,5 @@
 package com.solvd.laba.block1.task2.interfaces;
 
 public interface Slogan {
-    void saySlogan();
+    void saySlogan(String slogan);
 }
