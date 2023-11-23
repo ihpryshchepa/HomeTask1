@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-11-23T17:54:18</date>
+  <millis>1700754858989</millis>
+  <sequence>0</sequence>
+  <logger>com.solvd.laba.block1.task1.ArrayDemo</logger>
+  <level>INFO</level>
+  <class>com.solvd.laba.block1.task1.ArrayDemo</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Bubble sort</message>
+</record>
+</log>
