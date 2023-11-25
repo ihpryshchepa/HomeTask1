@@ -1,13 +1,11 @@
 package com.solvd.laba.block1.task2;
 
 import com.solvd.laba.block1.task2.exceptions.InvalidCountOfPlayersException;
-import com.solvd.laba.block1.task2.interfaces.Ball;
 
-public class Game implements Ball {
+public class Game {
     private String gameName;
     private String countryOfOrigin;
     private int countOfPlayers;
-    static int countOfOlympicGames;
 
     static {
         System.out.println("The Olympic Games are starting");
@@ -20,11 +18,6 @@ public class Game implements Ball {
 
     public static void printCountOfGames(int countOfOlympicGames) {
         System.out.println("Count of Olympic Games " + countOfOlympicGames);
-    }
-
-    @Override
-    public void playWithBall() {
-        System.out.println("Method playWithBall in class Game.");
     }
 
     public String getGameName() {
@@ -56,7 +49,7 @@ public class Game implements Ball {
     }
 
     public void setDefaultCountOfPlayers() {
-        this.countOfPlayers = 1;
+        this.countOfPlayers = 2;
     }
 
     @Override

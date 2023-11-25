@@ -2,12 +2,13 @@ package com.solvd.laba.block1.task2;
 
 import com.solvd.laba.block1.task2.exceptions.InvalidAgeException;
 import com.solvd.laba.block1.task2.exceptions.InvalidCharacteristicsException;
-import com.solvd.laba.block1.task2.interfaces.Playable;
-import com.solvd.laba.block1.task2.interfaces.Sportsmen;
+import com.solvd.laba.block1.task2.interfaces.ScoreInterface;
+import com.solvd.laba.block1.task2.interfaces.SloganInterface;
+import com.solvd.laba.block1.task2.interfaces.TrainingInterface;
 
 import java.util.Objects;
 
-public class Sportsman extends Person implements Playable, Sportsmen {
+public class Sportsman extends Person implements SloganInterface, ScoreInterface, TrainingInterface {
     private int age;
     private int strength;
     private int agility;
@@ -27,28 +28,24 @@ public class Sportsman extends Person implements Playable, Sportsmen {
         }
     }
 
-    public void setDefaultCharacteristics() {
-        this.strength = 5;
-        this.agility = 5;
-        this.intelligence = 5;
-    }
-
-    public int getSportsmanScore() {
+    @Override
+    public int calculateScore() {
         return age * (strength + agility + intelligence);
     }
 
+    @Override
+    public void saySlogan(String slogan) {
+        System.out.println("The sportsman slogan is - " + slogan);
+    }
+
+    @Override
     public void printNameLastName() {
-        System.out.println("My name is " + getName() + " " + getLastName());
+        System.out.println("My name is " + getName() + " " + getLastName() + " and I am sportsman!");
     }
 
     @Override
-    public void playGame() {
-        System.out.println("Method playGame in class Sportsman.");
-    }
-
-    @Override
-    public void doTrain() {
-        System.out.println("The Sportsman trains");
+    public void doTraining(int hours) {
+        System.out.println("Sportsman trains " + hours + " hours");
     }
 
     public String getName() {
@@ -77,10 +74,6 @@ public class Sportsman extends Person implements Playable, Sportsmen {
         } else {
             throw new InvalidAgeException("Age can not be negative.");
         }
-    }
-
-    public void setDefaultAge() {
-        this.age = 18;
     }
 
     @Override

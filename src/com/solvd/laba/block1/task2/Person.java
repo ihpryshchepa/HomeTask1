@@ -1,6 +1,8 @@
 package com.solvd.laba.block1.task2;
 
-public abstract class Person {
+import com.solvd.laba.block1.task2.interfaces.SloganInterface;
+
+public abstract class Person implements SloganInterface {
     protected String name;
     protected String lastName;
 
@@ -10,4 +12,9 @@ public abstract class Person {
     }
 
     protected abstract void printNameLastName();
+
+    @Override
+    public void saySlogan(String slogan) {
+        System.out.println("The person slogan is - " + slogan);
+    }
 }

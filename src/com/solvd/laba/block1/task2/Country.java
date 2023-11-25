@@ -1,12 +1,25 @@
 package com.solvd.laba.block1.task2;
 
-public class Country {
+import com.solvd.laba.block1.task2.interfaces.WeatherInterface;
+
+public class Country implements WeatherInterface {
     private String countryName;
     private String capitalCity;
 
     protected Country(String countryName, String capitalCity) {
         this.countryName = countryName;
         this.capitalCity = capitalCity;
+    }
+
+    @Override
+    public double getWeatherFactor(String weather) {
+        double weatherFactor = 0;
+        if (weather.equals("Sunny")) {
+            weatherFactor = 10;
+        } else if (weather.equals("Rainy")) {
+            weatherFactor = -10;
+        }
+        return weatherFactor;
     }
 
     public String getCountryName() {

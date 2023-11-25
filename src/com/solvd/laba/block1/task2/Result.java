@@ -1,8 +1,6 @@
 package com.solvd.laba.block1.task2;
 
-import com.solvd.laba.block1.task2.interfaces.Points;
-
-public abstract class Result implements Points {
+public abstract class Result {
     protected String result;
     protected int place;
     protected int score;
@@ -15,8 +13,5 @@ public abstract class Result implements Points {
         this.score = score;
     }
 
-    @Override
-    public void getPoints(int points) {
-        System.out.println("Method getPoints with score " + points);
-    }
+    protected abstract void printResult();
 }

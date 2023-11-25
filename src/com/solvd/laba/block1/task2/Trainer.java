@@ -1,9 +1,9 @@
 package com.solvd.laba.block1.task2;
 
 import com.solvd.laba.block1.task2.exceptions.InvalidYearsOfExperience;
-import com.solvd.laba.block1.task2.interfaces.Slogan;
+import com.solvd.laba.block1.task2.interfaces.SloganInterface;
 
-public class Trainer extends Person {
+public class Trainer extends Person implements SloganInterface {
     private String status;
     private int yearsOfExp;
 
@@ -12,8 +12,14 @@ public class Trainer extends Person {
         this.status = status;
     }
 
+    @Override
     public void printNameLastName() {
-        System.out.println("My name is " + getName() + " " + getLastName());
+        System.out.println("My name is " + getName() + " " + getLastName() + " and I am trainer!");
+    }
+
+    @Override
+    public void saySlogan(String slogan) {
+        System.out.println("The trainer slogan is - " + slogan);
     }
 
     public int getYearsOfExp() {
@@ -26,10 +32,6 @@ public class Trainer extends Person {
         } else {
             throw new InvalidYearsOfExperience("Count years of experience can not be negative.");
         }
-    }
-
-    public void setDefaultYearsOfExperience() {
-        this.yearsOfExp = 10;
     }
 
     public String getName() {

@@ -12,6 +12,11 @@ public final class FinalResult extends Result {
         this.countOfMedals = countOfMedals;
     }
 
+    @Override
+    public void printResult() {
+        System.out.println("It's a final result.");
+    }
+
     public final void displayVictoryCountry() {
         System.out.println("The Victory Country is " + victoryCountry);
     }
