@@ -5,10 +5,14 @@ import com.solvd.laba.block1.task2.exceptions.InvalidCharacteristicsException;
 import com.solvd.laba.block1.task2.interfaces.ScoreInterface;
 import com.solvd.laba.block1.task2.interfaces.SloganInterface;
 import com.solvd.laba.block1.task2.interfaces.TrainingInterface;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Objects;
 
 public class Sportsman extends Person implements SloganInterface, ScoreInterface, TrainingInterface {
+    private static final Logger LOGGER = LogManager.getLogger(Sportsman.class);
+
     private int age;
     private int strength;
     private int agility;
@@ -35,17 +39,17 @@ public class Sportsman extends Person implements SloganInterface, ScoreInterface
 
     @Override
     public void saySlogan(String slogan) {
-        System.out.println("The sportsman slogan is - " + slogan);
+        LOGGER.info("The sportsman slogan is - " + slogan);
     }
 
     @Override
     public void printNameLastName() {
-        System.out.println("My name is " + getName() + " " + getLastName() + " and I am sportsman!");
+        LOGGER.info("My name is " + getName() + " " + getLastName() + " and I am sportsman!");
     }
 
     @Override
     public void doTraining(int hours) {
-        System.out.println("Sportsman trains " + hours + " hours");
+        LOGGER.info("Sportsman trains " + hours + " hours");
     }
 
     public String getName() {

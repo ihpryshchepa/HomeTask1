@@ -1,14 +1,22 @@
 package com.solvd.laba.block1.task2;
 
 import com.solvd.laba.block1.task2.exceptions.InvalidCountOfPlayersException;
+import com.solvd.laba.block1.task2.interfaces.HistoryInterface;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-public class Game {
+import java.util.Objects;
+
+public class Game implements HistoryInterface {
+    private static final Logger LOGGER = LogManager.getLogger(Game.class);
+
+    static final int MIN_COUNT_OF_PLAYERS = 1;
     private String gameName;
     private String countryOfOrigin;
     private int countOfPlayers;
 
     static {
-        System.out.println("The Olympic Games are starting");
+        LOGGER.info("The Olympic Games are starting");
     }
 
     protected Game(String gameName, String countryOfOrigin) {
@@ -17,7 +25,12 @@ public class Game {
     }
 
     public static void printCountOfGames(int countOfOlympicGames) {
-        System.out.println("Count of Olympic Games " + countOfOlympicGames);
+        LOGGER.info("Count of Olympic Games " + countOfOlympicGames);
+    }
+
+    @Override
+    public void toKnowTheHistory(int year) {
+        LOGGER.info("The game " + getGameName() + " was included to Olympic Games in " + year);
     }
 
     public String getGameName() {
@@ -49,7 +62,7 @@ public class Game {
     }
 
     public void setDefaultCountOfPlayers() {
-        this.countOfPlayers = 2;
+        this.countOfPlayers = MIN_COUNT_OF_PLAYERS;
     }
 
     @Override
@@ -58,5 +71,18 @@ public class Game {
                 + "gameName='" + gameName + '\''
                 + "countOfPlayers='" + countOfPlayers + '\''
                 + '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Game game = (Game) o;
+        return getCountOfPlayers() == game.getCountOfPlayers() && Objects.equals(getGameName(), game.getGameName()) && Objects.equals(getCountryOfOrigin(), game.getCountryOfOrigin());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getGameName(), getCountryOfOrigin(), getCountOfPlayers());
     }
 }

@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Configuration status="WARN">
+<Configuration status="INFO">
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
-        <Console name="Console2" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm} [%t] %-5level %logger{36} - %msg%n"/>
-        </Console>
+        <File name="File" fileName="log-file.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        <File name="LogFile" fileName="main-log-file.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
     </Appenders>
     <Loggers>
-        <Logger name = "task1.ArrayDemo" level="debug">
-            <AppenderRef ref="Console2"/>
+        <Logger name="com.solvd.laba.block1.task1.ArrayDemo" level="debug">
+            <AppenderRef ref="File"/>
         </Logger>
-        <Root level="debug">
+        <Logger name="com.solvd.laba.block1.task2.Main" level="info" additivity="false">
             <AppenderRef ref="Console"/>
+        </Logger>
+        <Root level="error">
         </Root>
     </Loggers>
 </Configuration>

@@ -1,8 +1,12 @@
 package com.solvd.laba.block1.task2;
 
 import com.solvd.laba.block1.task2.interfaces.SloganInterface;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public abstract class Person implements SloganInterface {
+    private static final Logger LOGGER = LogManager.getLogger(Person.class);
+
     protected String name;
     protected String lastName;
 
@@ -15,6 +19,6 @@ public abstract class Person implements SloganInterface {
 
     @Override
     public void saySlogan(String slogan) {
-        System.out.println("The person slogan is - " + slogan);
+        LOGGER.info("The person slogan is - " + slogan);
     }
 }

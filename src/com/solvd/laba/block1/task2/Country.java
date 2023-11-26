@@ -1,8 +1,16 @@
 package com.solvd.laba.block1.task2;
 
+import com.solvd.laba.block1.task2.interfaces.HistoryInterface;
 import com.solvd.laba.block1.task2.interfaces.WeatherInterface;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-public class Country implements WeatherInterface {
+import java.util.Objects;
+
+public class Country implements WeatherInterface, HistoryInterface {
+
+    private static final Logger LOGGER = LogManager.getLogger(Country.class);
+
     private String countryName;
     private String capitalCity;
 
@@ -20,6 +28,11 @@ public class Country implements WeatherInterface {
             weatherFactor = -10;
         }
         return weatherFactor;
+    }
+
+    @Override
+    public void toKnowTheHistory(int year) {
+        LOGGER.info("The country " + getCountryName() + " held Olympic Games in " + year);
     }
 
     public String getCountryName() {
@@ -44,5 +57,18 @@ public class Country implements WeatherInterface {
                 + "countryName='" + countryName + '\''
                 + "capitalCity='" + capitalCity + '\''
                 + '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Country country = (Country) o;
+        return Objects.equals(getCountryName(), country.getCountryName()) && Objects.equals(capitalCity, country.capitalCity);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getCountryName(), capitalCity);
     }
 }

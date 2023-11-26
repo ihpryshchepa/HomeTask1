@@ -2,8 +2,14 @@ package com.solvd.laba.block1.task2;
 
 import com.solvd.laba.block1.task2.exceptions.InvalidYearsOfExperience;
 import com.solvd.laba.block1.task2.interfaces.SloganInterface;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.Objects;
 
 public class Trainer extends Person implements SloganInterface {
+    private static final Logger LOGGER = LogManager.getLogger(Trainer.class);
+
     private String status;
     private int yearsOfExp;
 
@@ -14,12 +20,12 @@ public class Trainer extends Person implements SloganInterface {
 
     @Override
     public void printNameLastName() {
-        System.out.println("My name is " + getName() + " " + getLastName() + " and I am trainer!");
+        LOGGER.info("My name is " + getName() + " " + getLastName() + " and I am trainer!");
     }
 
     @Override
     public void saySlogan(String slogan) {
-        System.out.println("The trainer slogan is - " + slogan);
+        LOGGER.info("The trainer slogan is - " + slogan);
     }
 
     public int getYearsOfExp() {
@@ -56,5 +62,26 @@ public class Trainer extends Person implements SloganInterface {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Trainer{" +
+                "status='" + status + '\'' +
+                ", yearsOfExp=" + yearsOfExp +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Trainer trainer = (Trainer) o;
+        return getYearsOfExp() == trainer.getYearsOfExp() && Objects.equals(getStatus(), trainer.getStatus());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getStatus(), getYearsOfExp());
     }
 }

@@ -1,0 +1,10 @@
+
+17:53:51.684 [main] INFO  com.solvd.laba.block1.task2.Main - Igor's score is - 540
+17:53:51.686 [main] INFO  com.solvd.laba.block1.task2.Main - Vasiliy's score is - 567
+17:53:51.686 [main] INFO  com.solvd.laba.block1.task2.Main - John's score is - 432
+17:53:51.686 [main] INFO  com.solvd.laba.block1.task2.Main - Tom's score is - 540
+17:53:51.688 [main] INFO  com.solvd.laba.block1.task2.Main - The team Ukraine score is - 22140
+17:53:51.688 [main] INFO  com.solvd.laba.block1.task2.Main - The team USA score is - 17496
+17:53:51.694 [main] INFO  com.solvd.laba.block1.task2.Main - FinalResult{victoryCountry='victoryCountry', countOfSportsmen=15, countOfMedals=10}
+17:53:51.694 [main] INFO  com.solvd.laba.block1.task2.Main - false
+17:53:51.694 [main] INFO  com.solvd.laba.block1.task2.Main - 49

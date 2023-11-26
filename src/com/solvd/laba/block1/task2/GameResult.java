@@ -2,8 +2,14 @@ package com.solvd.laba.block1.task2;
 
 import com.solvd.laba.block1.task2.exceptions.InvalidTeamScoreException;
 import com.solvd.laba.block1.task2.interfaces.WeatherInterface;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.Objects;
 
 public class GameResult extends Result implements WeatherInterface {
+    private static final Logger LOGGER = LogManager.getLogger(GameResult.class);
+
     private String gameName;
     private String weather;
 
@@ -35,15 +41,15 @@ public class GameResult extends Result implements WeatherInterface {
         double totalTeam1Score = team1.calculateScore() * weatherFactor;
         double totalTeam2Score = team2.calculateScore() * weatherFactor;
         if (totalTeam1Score > totalTeam2Score) {
-            System.out.println("In game " + game.getGameName() + " with count of score and weather factor " + totalTeam1Score + " wins " + team1.getName());
+            LOGGER.info("In game " + game.getGameName() + " with count of score and weather factor " + totalTeam1Score + " wins " + team1.getName());
         } else {
-            System.out.println("In game " + game.getGameName() + " with count of score and weather factor " + totalTeam2Score + " wins " + team2.getName());
+            LOGGER.info("In game " + game.getGameName() + " with count of score and weather factor " + totalTeam2Score + " wins " + team2.getName());
         }
     }
 
     @Override
     public void printResult() {
-        System.out.println("It's a game result.");
+        LOGGER.info("It's a game result.");
     }
 
     public String getGameName() {
@@ -94,5 +100,18 @@ public class GameResult extends Result implements WeatherInterface {
                 + ", place=" + place + '\''
                 + ", score=" + score + '\''
                 + '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        GameResult that = (GameResult) o;
+        return Objects.equals(getGameName(), that.getGameName()) && Objects.equals(getWeather(), that.getWeather());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getGameName(), getWeather());
     }
 }
