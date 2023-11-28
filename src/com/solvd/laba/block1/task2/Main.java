@@ -140,5 +140,30 @@ public class Main {
         LOGGER.info(sportsman3.hashCode());
 
         printCountOfGames(42);
+
+        MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
+        myLinkedList.addFirst(20);
+        myLinkedList.print();
+        myLinkedList.addFirst(10);
+        myLinkedList.print();
+        myLinkedList.addLast(30);
+        myLinkedList.print();
+        myLinkedList.addLast(40);
+        myLinkedList.print();
+        myLinkedList.addFirst(5);
+        myLinkedList.print();
+        myLinkedList.add(4, 25);
+        myLinkedList.print();
+        myLinkedList.deleteFirst();
+        myLinkedList.print();
+        myLinkedList.deleteLast();
+        myLinkedList.delete(3);
+        myLinkedList.print();
+
+        MyLinkedList<String> linkedListString = new MyLinkedList<>();
+        linkedListString.addFirst("One");
+        linkedListString.addLast("Two");
+        linkedListString.print();
+
     }
 }
